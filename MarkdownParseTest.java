@@ -2,7 +2,8 @@ import static org.junit.Assert.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import org.junit.*;                         
+import org.junit.*;
+import java.io.IOException;                         
 
 public class MarkdownParseTest {            
     @Test                         
