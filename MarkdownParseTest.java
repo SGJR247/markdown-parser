@@ -46,9 +46,9 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks3() throws Exception {
-        String[] expectedLinks3 = {"https://something.com", "some-thing.html"};
+        String[] expectedLinks3 = {"", "https://www.dictionary.com/"};
         
-        Path fileName = Path.of("test-file.md");
+        Path fileName = Path.of("test-file3.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks3 = MarkdownParse.getLinks(content);
         assertArrayEquals(expectedLinks3, actualLinks3.toArray());
