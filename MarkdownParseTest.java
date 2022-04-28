@@ -32,4 +32,9 @@ public class MarkdownParseTest {
         ArrayList<String> actualLinks2 = MarkdownParse.getLinks(content);
         assertArrayEquals(expectedLinks2, actualLinks2.toArray()); 
     }
+
+    @Test
+    public void multiplication() {
+        assertEquals(8, 2 * 2);
+    }
 }
