@@ -35,6 +35,6 @@ public class MarkdownParseTest {
 
     @Test
     public void multiplication() {
-        assertEquals(8, 2 * 2);
+        assertEquals(8, 2 * 2 * 2);
     }
 }
