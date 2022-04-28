@@ -41,7 +41,7 @@ public class MarkdownParseTest {
 
     @Test
     public void division() {
-        assertEquals(10, 12 / 2);
+        assertEquals(10, 20 / 2);
     }
-    
+
 }
