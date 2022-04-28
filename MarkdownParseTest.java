@@ -46,7 +46,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks3() throws Exception {
-        String[] expectedLinks3 = {"https://something.com"};
+        String[] expectedLinks3 = {"https://something.com", "some-thing.html"};
         
         Path fileName = Path.of("test-file.md");
         String content = Files.readString(fileName);
