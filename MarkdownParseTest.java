@@ -44,4 +44,14 @@ public class MarkdownParseTest {
         assertEquals(10, 20 / 2);
     }
 
+    @Test
+    public void testGetLinks3() throws Exception {
+        String[] expectedLinks3 = {"https://something.com"};
+        
+        Path fileName = Path.of("test-file.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actualLinks3 = MarkdownParse.getLinks(content);
+        assertArrayEquals(expectedLinks3, actualLinks3.toArray());
+    }
+
 }
