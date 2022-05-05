@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.*;
 import java.io.IOException;                         
 
@@ -52,6 +54,22 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks3 = MarkdownParse.getLinks(content);
         assertArrayEquals(expectedLinks3, actualLinks3.toArray());
+    }
+
+    @Test
+    public void testFile() throws IOException {
+        Path fileName = Path.of("broken-image-file.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("thereallink.com"), links);
+    }
+    
+    @Test
+    public void testFailFile() throws IOException {
+        Path fileName = Path.of("broken-everything-file.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("website", "([[[[link]]])"), links);
     }
 
 }
