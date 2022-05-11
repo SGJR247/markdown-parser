@@ -43,7 +43,7 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
             }
         }
-        return toReturn; //Boom shakalaka
+        return toReturn;
     }
 
 
