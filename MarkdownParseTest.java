@@ -8,6 +8,7 @@ import org.junit.*;
 import java.io.IOException;                         
 
 public class MarkdownParseTest {            
+    /*
     @Test                         
     public void addition() {
         assertEquals(12, 8 + 4);
@@ -63,7 +64,8 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(content);
         assertEquals(List.of("thereallink.com"), links);
     }
-    
+    */
+
     @Test
     public void testSnippet1() throws Exception {
         String[] expectedSnip1 = {"url.com", "`google.com", "google.com", "ucsd.edu"};
