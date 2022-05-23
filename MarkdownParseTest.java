@@ -64,14 +64,38 @@ public class MarkdownParseTest {
         assertEquals(List.of("thereallink.com"), links);
     }
     
-    /*
     @Test
-    public void testFailFile() throws IOException {
-        Path fileName = Path.of("broken-everything-file.md");
-        String content = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("website", "([[[[link]]])"), links);
-    }
-    */
+    public void testSnippet1() throws Exception {
+        String[] expectedSnip1 = {"url.com", "`google.com", "google.com", "ucsd.edu"};
 
+        Path fileName = Path.of("test-snippet1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actualSnip1 = MarkdownParse.getLinks(content);
+
+        assertArrayEquals(expectedSnip1, actualSnip1.toArray());
+    }
+
+    @Test
+    public void testSnippet2() throws Exception {
+        String[] expectedSnip2 = {"a.com", "b.com", "a.com(())", "example.com"};
+
+        Path fileName = Path.of("test-snippet2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actualSnip2 = MarkdownParse.getLinks(content);
+
+        assertArrayEquals(expectedSnip2, actualSnip2.toArray());
+    }
+
+    @Test
+    public void testSnippet3() throws Exception {
+        String[] expectedSnip3 = {"https://www.twitter.com", 
+                                  "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule",
+                                  "https://cse.ucsd.edu/"};
+
+        Path fileName = Path.of("test-snippet3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actualSnip3 = MarkdownParse.getLinks(content);
+        
+        assertArrayEquals(expectedSnip3, actualSnip3.toArray());
+    }
 }
